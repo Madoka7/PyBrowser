@@ -6,7 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from io import BytesIO
 import time
-from tools import run_within_time, swing
+from PyBrowser.tools import run_within_time, swing
 import platform
 
 
