@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import PyBrowser
 from setuptools import setup, find_packages
 
 with open("requirements.txt") as f:
@@ -7,9 +6,9 @@ with open("requirements.txt") as f:
 
 setup(
     name='PyBrowser',
-    version=PyBrowser.__version__,
-    author=PyBrowser.__author__,
-    author_email=PyBrowser.__author_email__,
+    version='0.1.5',
+    author='spengx',
+    author_email='ss@uutoto.com',
     packages=find_packages(),
     keywords="browser spider",
     install_requires=requirements,
