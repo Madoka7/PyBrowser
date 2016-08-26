@@ -17,7 +17,7 @@ class Browser(object):
         :param virtual: 是否使用虚拟化图形界面; 该选项可让程序在无图形化环境的服务器系统运行.
         :param v_width: 虚拟图形环境的宽度
         :param v_height: 虚拟图形环境的高度
-        :param driver: 自定义webdriver, 留空则默认使用chrome浏览器,请确保path里能找到chrome执行文件
+        :param driver: 自定义webdriver, 留空则默认使用webdriver.Chrome(),请确保path里能找到chrome执行文件
         """
         self.logger = logging.getLogger('PyBrowser')
         # 虚拟图形环境
@@ -28,14 +28,12 @@ class Browser(object):
 
         # 浏览器初始化
         if not driver:
-            self.driver = self.get_driver()
+            self.driver = webdriver.Chrome()
+        else:
+            self.driver = driver
 
         self.find = self.driver.find_element_by_css_selector  # 函数别名
         self.driver.implicitly_wait(20)  # find的默认超时时间
-
-    def get_driver(self):
-        chromedriver_path = './bin/chromedriver.{}'.format(platform.system())
-        return webdriver.Chrome(chromedriver_path)
 
     def get(self, url):
         """
