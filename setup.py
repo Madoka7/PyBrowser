@@ -6,7 +6,7 @@ with open("requirements.txt") as f:
 
 setup(
     name='PyBrowser',
-    version='0.1.4',
+    version='0.1.5',
     author='spengx',
     author_email='ss@uutoto.com',
     packages=find_packages(),
